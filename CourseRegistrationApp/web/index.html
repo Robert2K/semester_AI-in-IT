@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Asystent Koła</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="strona">
+      <header class="naglowek">
+        <div class="znak" aria-hidden="true">K</div>
+        <div>
+          <p class="nadtytul">KOŁO PROGRAMISTÓW</p>
+          <h1>Asystent Koła</h1>
+          <p class="opis">Zapytaj o warsztaty, zapisy i zasady uczestnictwa.</p>
+        </div>
+      </header>
+
+      <section class="panel pytanie-panel" aria-labelledby="pytanie-tytul">
+        <h2 id="pytanie-tytul">W czym mogę pomóc?</h2>
+        <form id="formularz">
+          <label for="pytanie">Twoje pytanie</label>
+          <textarea id="pytanie" name="pytanie" rows="3" maxlength="1000"
+            placeholder="Np. Ile kosztuje warsztat dla osoby spoza Koła?" required></textarea>
+          <div class="dodawanie-dokumentu">
+            <label class="przycisk-dodaj" for="dokumenty">＋ Dodaj dokument</label>
+            <input id="dokumenty" type="file" multiple
+              accept=".pdf,.doc,.docx,.odt,.docm,.dotx,.xls,.xlsx,.xlsm,.png,.bmp,.jpg,.txt">
+            <p class="informacja-plikow">Dozwolone: .pdf, .doc, .docx, .odt, .docm, .dotx, .xls, .xlsx, .xlsm, .png, .bmp, .jpg, .txt. Max.: 10 MB na plik.</p>
+            <p class="informacja-czytania">Na razie treść zapytań może korzystać z plików TXT. Odczyt pozostałych formatów wymaga dodania parserów.</p>
+            <ul id="lista-dokumentow" class="lista-dokumentow" aria-live="polite"></ul>
+          </div>
+          <div class="formularz-dol">
+            <p class="podpowiedz">Odpowiedzi są tworzone na podstawie dokumentów Koła.</p>
+            <button id="wyslij" type="submit">
+              <span>Zapytaj</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p id="blad" class="blad" role="alert" hidden></p>
+      </section>
+
+      <section id="wynik" class="panel wynik-panel" aria-labelledby="odpowiedz-tytul" hidden>
+        <div class="wynik-naglowek">
+          <div>
+            <p class="nadtytul">ODPOWIEDŹ</p>
+            <h2 id="odpowiedz-tytul">Odpowiedź asystenta</h2>
+          </div>
+          <span class="znacznik" aria-hidden="true">AI</span>
+        </div>
+        <p id="odpowiedz" class="odpowiedz"></p>
+        <div id="ostrzezenie" class="ostrzezenie" role="status" hidden></div>
+        <div class="zrodla-sekcja">
+          <h3>Źródła</h3>
+          <p id="brak-zrodel" class="brak-zrodel" hidden>Nie znaleziono pasujących fragmentów.</p>
+          <ul id="zrodla" class="zrodla"></ul>
+        </div>
+        <p class="zastrzezenie">Wskazanie źródeł nie gwarantuje, że odpowiedź jest prawdziwa. W razie wątpliwości sprawdź dokument źródłowy.</p>
+      </section>
+
+      <footer>
+        <span>Asystent odpowiada na podstawie dokumentów Koła.</span>
+      </footer>
+    </main>
+  </body>
+</html>

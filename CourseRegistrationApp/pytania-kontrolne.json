@@ -1,0 +1,10 @@
+[
+  { "pytanie": "Ile kosztuje warsztat dla osoby spoza Koła?", "zrodlo": "regulamin.md" },
+  { "pytanie": "Do kiedy mogę odwołać zapis?", "zrodlo": "regulamin.md" },
+  { "pytanie": "W którą godzinę jest Git?", "zrodlo": "warsztaty.md" },
+  { "pytanie": "Gdzie odbywają się zajęcia z Pythona?", "zrodlo": "warsztaty.md" },
+  { "pytanie": "Czy muszę mieć własnego laptopa?", "zrodlo": "sprzet-i-sala.md" },
+  { "pytanie": "Jakie jest hasło do wifi?", "zrodlo": "sprzet-i-sala.md" },
+  { "pytanie": "Po ilu spotkaniach dostanę certyfikat?", "zrodlo": "faq.md" },
+  { "pytanie": "Czy są nagrania z zajęć?", "zrodlo": "faq.md" }
+]

@@ -1,0 +1,418 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17233b;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(108, 132, 255, 0.1), transparent 34rem),
+    #f5f7fb;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+.strona {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+  padding: 52px 0 28px;
+}
+
+.naglowek {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.znak {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 17px;
+  color: #fff;
+  background: linear-gradient(145deg, #6578f6, #7954d8);
+  box-shadow: 0 9px 22px rgba(89, 87, 213, 0.25);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.nadtytul {
+  margin: 0 0 6px;
+  color: #687694;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 5px;
+  font-size: clamp(26px, 5vw, 34px);
+  letter-spacing: -0.045em;
+}
+
+.opis {
+  margin-bottom: 0;
+  color: #687694;
+  font-size: 15px;
+}
+
+.panel {
+  border: 1px solid #e7eaf2;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 36px rgba(24, 39, 75, 0.055);
+}
+
+.pytanie-panel {
+  padding: clamp(22px, 5vw, 34px);
+}
+
+.pytanie-panel h2,
+.wynik-panel h2 {
+  margin-bottom: 22px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: #43516c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 108px;
+  resize: vertical;
+  padding: 15px 16px;
+  border: 1px solid #dfe4ef;
+  border-radius: 12px;
+  outline: none;
+  color: #17233b;
+  background: #fbfcfe;
+  line-height: 1.55;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+textarea::placeholder {
+  color: #9aa5ba;
+}
+
+textarea:focus {
+  border-color: #7785ef;
+  box-shadow: 0 0 0 4px rgba(103, 120, 239, 0.13);
+}
+
+.dodawanie-dokumentu {
+  margin-top: 18px;
+}
+
+.przycisk-dodaj {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid #dfe4ef;
+  border-radius: 10px;
+  color: #43516c;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.przycisk-dodaj:hover {
+  border-color: #9da8ec;
+  background: #f8f9ff;
+}
+
+#dokumenty {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+#dokumenty:focus-visible + .informacja-plikow {
+  outline: 2px solid #5869e8;
+}
+
+.informacja-plikow,
+.informacja-czytania {
+  margin: 8px 0 0;
+  color: #7c879c;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.informacja-czytania {
+  color: #75530d;
+}
+
+.lista-dokumentow {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  color: #59667d;
+  font-size: 13px;
+  list-style: none;
+}
+
+.lista-dokumentow li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border: 1px solid #edf0f5;
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+
+.usun-dokument {
+  min-height: 32px;
+  flex: 0 0 auto;
+  padding: 0 10px;
+  color: #8e3d3d;
+  background: #fff3f2;
+  font-size: 12px;
+}
+
+.formularz-dol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.podpowiedz {
+  margin: 0;
+  color: #7c879c;
+  font-size: 12px;
+}
+
+button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: #5869e8;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: #4658d4;
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(88, 105, 232, 0.34);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status,
+.blad {
+  margin: 14px 0 0;
+  font-size: 13px;
+}
+
+.status {
+  color: #5e6b83;
+}
+
+.blad {
+  padding: 11px 13px;
+  border: 1px solid #f1c7c7;
+  border-radius: 10px;
+  color: #9a3030;
+  background: #fff6f5;
+}
+
+.wynik-panel {
+  margin-top: 20px;
+  padding: clamp(22px, 5vw, 34px);
+}
+
+.wynik-naglowek {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wynik-naglowek h2 {
+  margin-bottom: 0;
+}
+
+.znacznik {
+  padding: 6px 9px;
+  border: 1px solid #e6e9fb;
+  border-radius: 8px;
+  color: #5969db;
+  background: #f4f5ff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.odpowiedz {
+  margin: 22px 0;
+  color: #35425c;
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.ostrzezenie {
+  margin: 16px 0;
+  padding: 13px 15px;
+  border: 1px solid #f0d7a2;
+  border-radius: 11px;
+  color: #75530d;
+  background: #fff9e9;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.zrodla-sekcja {
+  padding-top: 18px;
+  border-top: 1px solid #edf0f5;
+}
+
+.zrodla-sekcja h3 {
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.zrodla {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zrodla li {
+  padding: 12px 14px;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+
+.zrodlo-id {
+  display: block;
+  margin-bottom: 5px;
+  color: #5363d5;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.zrodlo-tekst {
+  margin: 0;
+  color: #59667d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.brak-zrodel {
+  margin-bottom: 0;
+  color: #748099;
+  font-size: 13px;
+}
+
+.zastrzezenie {
+  margin: 16px 0 0;
+  color: #8a94a7;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+footer {
+  padding: 24px 4px 0;
+  color: #929cb0;
+  font-size: 13px;
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .strona {
+    width: min(100% - 22px, 760px);
+    padding-top: 28px;
+  }
+
+  .naglowek {
+    gap: 13px;
+    margin-bottom: 23px;
+  }
+
+  .znak {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .formularz-dol {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .formularz-dol button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

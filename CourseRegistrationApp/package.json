@@ -1,0 +1,16 @@
+{
+  "name": "asystent-kola",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Asystent, który odpowiada na pytania o warsztaty Koła na podstawie dokumentów (RAG).",
+  "scripts": {
+    "test": "node --test",
+    "pytaj": "node --env-file-if-exists=.env pytaj.js",
+    "ocena": "node ocena.js",
+    "web": "node --env-file-if-exists=.env server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  }
+}
